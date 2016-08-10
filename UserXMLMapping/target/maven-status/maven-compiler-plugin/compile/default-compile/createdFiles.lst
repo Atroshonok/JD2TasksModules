@@ -1,0 +1,10 @@
+com\atr\hibtasks\beans\UserType.class
+com\atr\hibtasks\loaders\UserLoader.class
+com\atr\hibtasks\db\UserDao.class
+com\atr\hibtasks\loaders\MenuLoader.class
+com\atr\hibtasks\db\Dao.class
+com\atr\hibtasks\db\BaseDao.class
+com\atr\hibtasks\beans\User.class
+com\atr\hibtasks\utils\UserPropertyManager.class
+com\atr\hibtasks\db\exceptions\DaoException.class
+com\atr\hibtasks\utils\HibernateUtil.class

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.atr.hibtasks.beans" auto-import="false" catalog="task1_db">
+    <class name="User" table="user">
+        <id name="id" type="int" column="F_ID">
+            <generator class="increment"/>
+        </id>
+
+        <property name="login" column="F_LOGIN" type="string"/>
+        <property name="password" column="F_PASSWORD" type="string"/>
+        <property name="email" column="F_EMAIL" type="string"/>
+        <property name="firstname" column="F_FIRSTNAME" type="string"/>
+        <property name="lastname" column="F_LASTNAME" type="string"/>
+    </class>
+</hibernate-mapping>
+
+
