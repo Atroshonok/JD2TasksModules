@@ -79,6 +79,6 @@
 	</build>
 
 	<modules>
-		<module>UserXMLMapping</module>
+		<module>BeansXMLMapping</module>
 	</modules>
 </project>

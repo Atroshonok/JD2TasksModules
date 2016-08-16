@@ -3,11 +3,13 @@
  */
 package com.atr.hibtasks.loaders;
 
+import java.util.Date;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
 import com.atr.hibtasks.beans.User;
+import com.atr.hibtasks.beans.UserType;
 import com.atr.hibtasks.db.UserDao;
 import com.atr.hibtasks.db.exceptions.DaoException;
 import com.atr.hibtasks.utils.HibernateUtil;
@@ -145,6 +147,8 @@ public class MenuLoader {
 	user.setEmail(UserPropertyManager.getProperty("email"));
 	user.setFirstname(UserPropertyManager.getProperty("firstname"));
 	user.setLastname(UserPropertyManager.getProperty("lastname"));
+	user.setUserType(UserType.valueOf(UserPropertyManager.getProperty("userType")));
+	user.setRegistrDate(new Date());
     }
 
     private static User findUser() {
