@@ -88,7 +88,7 @@ public class MenuLoader {
 	System.out.println("        4. Save User");
 	System.out.println("        5. Load User");
 	System.out.println("        6. Flush User");
-	System.out.println("        7. Save or Update and get Product");
+	System.out.println("        7. Save or Update Product");
 	System.out.println("        8. Get Product by id");
 
     }
@@ -115,7 +115,7 @@ public class MenuLoader {
 	    productDao = new ProductDao();
 	}
 	return productDao;
-	
+
     }
 
     private static Product createProduct() {
@@ -126,7 +126,7 @@ public class MenuLoader {
 	product.setName("Plane MIG-29");
 	product.setPrice(45.8);
 	return product;
-	
+
     }
 
     private static void performFlush() {
