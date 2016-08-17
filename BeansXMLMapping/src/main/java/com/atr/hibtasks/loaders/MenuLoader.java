@@ -8,8 +8,11 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+import com.atr.hibtasks.beans.Product;
+import com.atr.hibtasks.beans.ProductCategory;
 import com.atr.hibtasks.beans.User;
 import com.atr.hibtasks.beans.UserType;
+import com.atr.hibtasks.db.ProductDao;
 import com.atr.hibtasks.db.UserDao;
 import com.atr.hibtasks.db.exceptions.DaoException;
 import com.atr.hibtasks.utils.HibernateUtil;
@@ -23,10 +26,12 @@ public class MenuLoader {
     private static Logger log = Logger.getLogger(MenuLoader.class);
     public static Boolean needMenu = true;
     private static UserDao userDao = null;
+    private static ProductDao productDao = null;
 
     public static void menu() throws DaoException {
 	while (needMenu) {
 	    User user = null;
+	    Product product = null;
 	    printMenu();
 	    Scanner scanner = new Scanner(System.in);
 	    int choice = scanner.nextInt();
@@ -56,6 +61,15 @@ public class MenuLoader {
 	    case 6:
 		performFlush();
 		break;
+	    case 7:
+		product = createProduct();
+		System.out.println("Created product: " + product);
+		getProductDao().saveOrUpdate(product);
+		break;
+	    case 8:
+		product = findProduct();
+		System.out.println("Got product: " + product);
+		break;
 	    default:
 		needMenu = true;
 		break;
@@ -63,6 +77,56 @@ public class MenuLoader {
 	    needMenu = true;
 	}
 
+    }
+
+    private static void printMenu() {
+	System.out.println(" Options:");
+	System.out.println("        0. Exit");
+	System.out.println("        1. Delete User");
+	System.out.println("        2. Get User");
+	System.out.println("        3. Save or Update User");
+	System.out.println("        4. Save User");
+	System.out.println("        5. Load User");
+	System.out.println("        6. Flush User");
+	System.out.println("        7. Save or Update and get Product");
+	System.out.println("        8. Get Product by id");
+
+    }
+
+    private static Product findProduct() {
+	System.out.println("Get Product by Id. Please enter Product id:");
+	System.out.print("Id - ");
+
+	Scanner scanner = new Scanner(System.in);
+	Product product = null;
+	Integer id = scanner.nextInt();
+	try {
+	    product = getProductDao().get(id);
+	} catch (DaoException e) {
+	    log.error("Can,t load product with id = " + id, e);
+	} catch (NullPointerException e) {
+	    log.error("Unable load product:", e);
+	}
+	return product;
+    }
+
+    private static ProductDao getProductDao() {
+	if (productDao == null) {
+	    productDao = new ProductDao();
+	}
+	return productDao;
+	
+    }
+
+    private static Product createProduct() {
+	Product product = new Product();
+	product.setCategory(new ProductCategory());
+	product.getCategory().setName("First Category");
+	product.setCount(10);
+	product.setName("Plane MIG-29");
+	product.setPrice(45.8);
+	return product;
+	
     }
 
     private static void performFlush() {
@@ -176,15 +240,4 @@ public class MenuLoader {
 	return userDao;
     }
 
-    private static void printMenu() {
-	System.out.println(" Options:");
-	System.out.println("        0. Exit");
-	System.out.println("        1. Delete User");
-	System.out.println("        2. Get User");
-	System.out.println("        3. Save or Update User");
-	System.out.println("        4. Save User");
-	System.out.println("        5. Load User");
-	System.out.println("        6. Flush User");
-
-    }
 }

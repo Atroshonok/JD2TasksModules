@@ -1,5 +1,7 @@
 com\atr\hibtasks\beans\UserType.class
+com\atr\hibtasks\beans\ProductCategory.class
 com\atr\hibtasks\loaders\UserLoader.class
+com\atr\hibtasks\beans\Product.class
 com\atr\hibtasks\db\UserDao.class
 com\atr\hibtasks\loaders\MenuLoader.class
 com\atr\hibtasks\db\Dao.class

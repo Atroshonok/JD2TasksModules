@@ -13,7 +13,7 @@ public class ProductCategory implements Serializable {
 
     private static final long serialVersionUID = -1994744828498711519L;
     
-    private long id;
+    private int id;
     private String name;
 
     public ProductCategory() {
@@ -55,11 +55,11 @@ public class ProductCategory implements Serializable {
 	return true;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

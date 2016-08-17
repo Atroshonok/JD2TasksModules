@@ -12,27 +12,28 @@ import java.io.Serializable;
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 2061883038888083548L;
-   
-    private long id;
+
+    private int id;
     private String name;
     private double price;
     private ProductCategory category;
     private int count;
     private String description;
-   
+
     public Product() {
 	super();
     }
-    
-    
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
 	return "Product [id=" + id + ", name=" + name + ", price=" + price + ", category=" + category + ", count="
 		+ count + "]";
     }
-
-
 
     @Override
     public int hashCode() {
@@ -82,61 +83,52 @@ public class Product implements Serializable {
 	return true;
     }
 
-    public long getId() {
-        return id;
+    public int getId() {
+	return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(int id) {
+	this.id = id;
     }
 
     public String getName() {
-        return name;
+	return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+	this.name = name;
     }
 
     public double getPrice() {
-        return price;
+	return price;
     }
 
     public void setPrice(double price) {
-        this.price = price;
+	this.price = price;
     }
 
     public ProductCategory getCategory() {
-        return category;
+	return category;
     }
 
     public void setCategory(ProductCategory category) {
-        this.category = category;
+	this.category = category;
     }
 
     public int getCount() {
-        return count;
+	return count;
     }
 
     public void setCount(int count) {
-        this.count = count;
+	this.count = count;
     }
 
     public String getDescription() {
-        return description;
+	return description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+	this.description = description;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 }

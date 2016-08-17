@@ -31,7 +31,7 @@ public class BaseDao<T> implements Dao<T> {
 	    transaction.commit();
 	    log.info("Save or update (commit):" + t);
 	} catch (HibernateException e) {
-	    log.error("Error save or update object of " + t.getClass() + "class in Dao" + e);
+	    log.error("Error save or update object of " + t.getClass() + "class in Dao: " + e);
 	    transaction.rollback();
 	    throw new DaoException(e);
 	}
@@ -47,7 +47,7 @@ public class BaseDao<T> implements Dao<T> {
 	    transaction.commit();
 	    log.info("Save (commit):" + t);
 	} catch (HibernateException e) {
-	    log.error("Error save object of " + t.getClass() + " class in Dao" + e);
+	    log.error("Error save object of " + t.getClass() + " class in Dao: " + e);
 	    transaction.rollback();
 	    throw new DaoException(e);
 	}
@@ -65,7 +65,7 @@ public class BaseDao<T> implements Dao<T> {
 	    log.info("get clazz:" + t);
 	} catch (HibernateException e) {
 	    transaction.rollback();
-	    log.error("Error get " + getPersistentClass() + " in Dao" + e);
+	    log.error("Error get " + getPersistentClass() + " in Dao: " + e);
 	    throw new DaoException(e);
 	}
 	return t;
@@ -81,7 +81,7 @@ public class BaseDao<T> implements Dao<T> {
 	    log.info("load() clazz:" + t);
 	    transaction.commit();
 	} catch (HibernateException e) {
-	    log.error("Error load() " + getPersistentClass() + " in Dao" + e);
+	    log.error("Error load() " + getPersistentClass() + " in Dao: " + e);
 	    transaction.rollback();
 	    throw new DaoException(e);
 	}
@@ -96,13 +96,13 @@ public class BaseDao<T> implements Dao<T> {
 	    transaction.commit();
 	    log.info("Delete:" + t);
 	} catch (HibernateException e) {
-	    log.error("Error delete object of " + t.getClass() + " class in Dao" + e);
+	    log.error("Error delete object of " + t.getClass() + " class in Dao: " + e);
 	    transaction.rollback();
 	    throw new DaoException(e);
 	}
     }
 
-    private Class getPersistentClass() {
+    private Class<T> getPersistentClass() {
 	return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     }
 

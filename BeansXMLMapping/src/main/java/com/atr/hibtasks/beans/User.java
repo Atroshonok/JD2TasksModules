@@ -27,11 +27,17 @@ public class User implements Serializable {
 	super();
     }
     
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
-	return "User [id=" + id + ", registrDate=" + registrDate.toString() + ", login=" + login + ", email=" + email + ", firstname=" + firstname + ", lastname="
-		+ lastname + ", userType=" + userType + "]";
+	return "User [id=" + id + ", registrDate=" + registrDate + ", login=" + login + ", password=" + password
+		+ ", email=" + email + ", firstname=" + firstname + ", lastname=" + lastname + ", userType=" + userType
+		+ "]";
     }
+
 
     @Override
     public int hashCode() {
