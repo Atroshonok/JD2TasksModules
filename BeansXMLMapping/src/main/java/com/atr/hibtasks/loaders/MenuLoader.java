@@ -131,7 +131,7 @@ public class MenuLoader {
 
     private static void performFlush() {
 	int id = 13;
-	String newName = "Alla";
+	String newName = "Misha";
 	try {
 	    getUserDao().flush(id, newName);
 	} catch (DaoException e) {
