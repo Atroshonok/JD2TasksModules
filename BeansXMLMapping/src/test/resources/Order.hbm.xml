@@ -6,6 +6,7 @@
 		<id name="id" type="long">
 			<generator class="increment"/>
 		</id>
+		<many-to-one name="cart" class="Cart" column="F_CART_ID"/>
 		<property name="sumPrice" type="double"/>
 		<property name="state" type="string"/>
 	</class>

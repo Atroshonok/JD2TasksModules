@@ -57,7 +57,6 @@ public class CartDaoTest {
 	System.out.println("Created Cart object before test: " + cart);
 	saveOrUpdateCart(cart);
     }
-
     private void saveOrUpdateCart(Cart cart) {
 	try {
 	    cartDao.saveOrUpdate(cart);
@@ -70,12 +69,13 @@ public class CartDaoTest {
     public void tearDown() throws Exception {
 	util.getSession().clear();
     }
-
+    
+    @Test
     public void testSaveOrUpdate() throws DaoException {
 	    cartDao.saveOrUpdate(cart);
     }
 
-    @Test
+//    @Test
     public void testGet() {
 	Cart actualCart = null;
 	try {
@@ -89,7 +89,7 @@ public class CartDaoTest {
 
     }
 
-    @Test
+//    @Test
     public void testDelete() {
 	try {
 	    cartDao.delete(cart);

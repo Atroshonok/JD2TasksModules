@@ -16,6 +16,7 @@ public class Order implements Serializable {
     private long id;
     private double sumPrice;
     private String state;
+    private Cart cart;
 
     public Order() {
 	super();
@@ -119,6 +120,18 @@ public class Order implements Serializable {
      */
     public void setState(String state) {
 	this.state = state;
+    }
+
+
+
+    public Cart getCart() {
+	return cart;
+    }
+
+
+
+    public void setCart(Cart cart) {
+	this.cart = cart;
     }
 
 

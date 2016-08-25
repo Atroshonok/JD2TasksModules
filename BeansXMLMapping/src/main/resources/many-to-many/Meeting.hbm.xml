@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.atr.hibtasks.beans.manytomany" auto-import="false" catalog="task2_db">
+	<class name="Meeting" lazy="false">
+		<id name="id" type="long">
+			<generator class="increment"/>
+		</id>
+    	<property name="subject" type="string"/>
+    	<set name="employees" table="T_EMPLOYEE_MEETING" inverse="true" fetch="join">
+    		<key column="F_MEETING_ID"/>
+    		<many-to-many column="F_EMPLOYEE_ID" class="Employee"/>
+    	</set>
+	</class>	
+</hibernate-mapping>

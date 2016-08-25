@@ -2,13 +2,13 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.atr.hibtasks.beans" auto-import="false" catalog="test_db">
-	<class name="Cart" table="carts">
+	<class name="Cart" table="T_CART">
 		<id name="id" column="F_CART_ID" type="long">
 			<generator class="increment"/>
 		</id>
 		<property name="allProductsCount" type="int"/>
-		<list name="orders" fetch="join" cascade="all" lazy="true">
-			<key column="F_CART_ID" not-null="true" />
+		<list name="orders" lazy="false" fetch="join" cascade="all">
+			<key column="F_CART_ID"/>
 			<list-index column="F_ORDER_INDX"/>
 			<one-to-many class="Order"/>
 		</list>

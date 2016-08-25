@@ -80,5 +80,6 @@
 
 	<modules>
 		<module>BeansXMLMapping</module>
+		<module>BeansAnnotationsMapping</module>
 	</modules>
 </project>
