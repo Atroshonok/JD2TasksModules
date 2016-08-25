@@ -13,7 +13,10 @@
 <!-- 	<property name="hibernate.hbm2ddl.auto">validate</property>
  -->	<property name="hibernate.hbm2ddl.auto">create</property>
 		
-		<mapping class=""/>
+		<mapping class="com.atr.annotations.beans.Employee"/>
+		<mapping class="com.atr.annotations.beans.EmployeeDetail"/>
+		<mapping class="com.atr.annotations.beans.Department"/>
+		<mapping class="com.atr.annotations.beans.Meeting"/>
 	</session-factory>
 </hibernate-configuration>
 

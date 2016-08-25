@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.atr.hibtasks.beans.manytomany;
+package com.atr.annotations.beans;
 
 import java.io.Serializable;
 
@@ -14,16 +14,24 @@ import org.hibernate.annotations.Parameter;
  * @author Atroshonok Ivan
  *
  */
+@Entity
+@Table(name = "T_EMPLOYEE_DETAIL", catalog = "task3_db")
 public class EmployeeDetail implements Serializable {
 
     private static final long serialVersionUID = 2385989881435854835L;
     
+    @Id
+    @Column(name = "F_EMPL_DETAIL_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column(name = "F_COUNTRY")
     private String country;
     
+    @Column(name = "F_CITY")
     private String city;
     
+    @Column(name = "F_STREET")
     private String street;
     
     
@@ -31,6 +39,17 @@ public class EmployeeDetail implements Serializable {
     public EmployeeDetail() {
 	super();
     }
+
+    
+
+    public EmployeeDetail(String country, String city, String street) {
+	super();
+	this.country = country;
+	this.city = city;
+	this.street = street;
+    }
+
+
 
     /* (non-Javadoc)
      * @see java.lang.Object#toString()
