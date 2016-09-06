@@ -9,8 +9,6 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.Proxy;
 
 /**
@@ -40,8 +38,7 @@ public class Employee implements Serializable {
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn(name = "F_EMPL_ID", referencedColumnName = "F_EMPL_DETAIL_ID")
-    // @JoinColumn(name = "F_EMPL_ID", referencedColumnName =
-    // "F_EMPL_DETAIL_ID")
+    // @JoinColumn(name = "F_EMPL_ID", referencedColumnName = "F_EMPL_DETAIL_ID")
     private EmployeeDetail employeeDetail;
 
     @ManyToOne

@@ -57,7 +57,7 @@ public class Runner {
 	
 	
 	empl3 = (Employee) session.get(Employee.class, 3l);
-	System.out.println(empl3);
+	log.info("Employee with id = 3: " + empl3);
 	
 
     }
