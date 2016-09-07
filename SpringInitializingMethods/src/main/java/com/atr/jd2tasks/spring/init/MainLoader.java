@@ -3,7 +3,6 @@ package com.atr.jd2tasks.spring.init;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.atr.jd2tasks.spring.init.beans.Address;
 import com.atr.jd2tasks.spring.init.beans.Person;
 
 
