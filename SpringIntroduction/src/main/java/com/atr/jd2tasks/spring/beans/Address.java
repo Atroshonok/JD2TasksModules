@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.atr.jd2tasks.spring;
+package com.atr.jd2tasks.spring.beans;
 
 import org.springframework.beans.factory.BeanClassLoaderAware;
 

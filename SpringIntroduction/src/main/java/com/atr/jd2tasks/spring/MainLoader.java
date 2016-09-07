@@ -6,6 +6,9 @@ package com.atr.jd2tasks.spring;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.atr.jd2tasks.spring.beans.Address;
+import com.atr.jd2tasks.spring.beans.Person;
+
 /**
  * @author Ivan Atroshonok
  *
