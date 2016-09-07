@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.atr.jd2tasks.spring.collections.beans;
+package com.atr.jd2tasks.constructor.beans;
 
 /**
  * @author Ivan Atroshonok
@@ -9,14 +9,14 @@ package com.atr.jd2tasks.spring.collections.beans;
  */
 public class Person {
     private String name;
-    private String age;
-    private Address address;
+    private Integer age;
+    private String work = "there is";
 
     public Person() {
 	super();
     }
 
-    public Person(String name, String age) {
+    public Person(String name, Integer age) {
 	super();
 	this.name = name;
 	this.age = age;
@@ -24,7 +24,7 @@ public class Person {
 
     @Override
     public String toString() {
-	return "Person [name=" + name + ", age=" + age + ", address=" + address + "]";
+	return "Person [name=" + name + ", age=" + age + ", work=" + work + "]";
     }
 
     public String getName() {
@@ -35,20 +35,20 @@ public class Person {
 	this.name = name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
 	return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
 	this.age = age;
     }
 
-    public Address getAddress() {
-	return address;
+    public String getWork() {
+	return work;
     }
 
-    public void setAddress(Address address) {
-	this.address = address;
+    public void setWork(String work) {
+	this.work = work;
     }
 
 }

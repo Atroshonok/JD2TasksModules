@@ -94,5 +94,6 @@
     	<module>SpringInitializingMethods</module>
     	<module>spring-namespaces</module>
     	<module>spring-collections</module>
+    	<module>spring-constructor-null-init</module>
 	</modules>
 </project>
