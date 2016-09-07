@@ -93,5 +93,6 @@
     	<module>SpringIntroduction</module>
     	<module>SpringInitializingMethods</module>
     	<module>spring-namespaces</module>
+    	<module>spring-collections</module>
 	</modules>
 </project>

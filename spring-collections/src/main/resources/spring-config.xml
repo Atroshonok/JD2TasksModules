@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.atr.jd2tasks.spring.collections.beans.Address">
+    	<property name="countriesList">
+    		<list>
+    			<value>Belarus</value>
+    			<value>Russia</value>
+    			<value>USA</value>
+    		</list>
+    	</property>
+    	<property name="streetsSet">
+    		<set>
+    			<value>Gaya street</value>
+    			<value>Kommunisticheskaya street</value>
+    			<value>Van Ness street</value>
+    			<value>Van Ness street</value>
+    		</set>
+    	</property>
+    	<property name="housesMap">
+    		<map>
+    			<entry key="1" value="16"/>
+    			<entry key="2" value="160"/>
+    			<entry key="3" value="20"/>
+    		</map>
+    	</property>
+    	<property name="personProps">
+    		<props>
+    			<prop key="name">Ivan</prop>
+    			<prop key="surname">Atroshonok</prop>
+    			<prop key="age">29</prop>
+    		</props>
+    	</property>
+    </bean>
+</beans>

@@ -28,10 +28,6 @@ public class Address {
 	return "Address [country=" + country + ", street=" + street + ", home=" + home + "]";
     }
 
-    public void defaultInitMethod() {
-	System.out.println("default-init method works in class: " + getClass());
-    }
-
     public String getCountry() {
 	return country;
     }
