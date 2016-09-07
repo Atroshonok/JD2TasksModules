@@ -92,5 +92,6 @@
 		<module>BeansAnnotationsMapping</module>
     	<module>SpringIntroduction</module>
     	<module>SpringInitializingMethods</module>
+    	<module>spring-namespaces</module>
 	</modules>
 </project>

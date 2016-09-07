@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="com.atr.jd2tasks.spring.namespaces.beans.Person" scope="prototype" 
+    	p:name="Ivan" p:age="29" p:address-ref="address">
+    </bean>
+    <bean id="address" class="com.atr.jd2tasks.spring.namespaces.beans.Address" scope="prototype"
+    	p:country="Belarus" p:street="Microrayon-2" p:home="100">
+    </bean>
+</beans>

@@ -8,11 +8,9 @@
 		<artifactId>JD2TasksModules</artifactId>
 		<version>0.0.1</version>
 	</parent>
-	
-	<artifactId>SpringInitializingMethods</artifactId>
-	<name>SpringInitializingMethods</name>
+	<artifactId>spring-namespaces</artifactId>
+	<name>spring-namespaces</name>
 	<url>http://maven.apache.org</url>
-	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
