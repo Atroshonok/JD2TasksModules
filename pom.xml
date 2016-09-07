@@ -91,5 +91,6 @@
 		<module>BeansXMLMapping</module>
 		<module>BeansAnnotationsMapping</module>
     	<module>SpringIntroduction</module>
-  </modules>
+    	<module>SpringInitializingMethods</module>
+	</modules>
 </project>
