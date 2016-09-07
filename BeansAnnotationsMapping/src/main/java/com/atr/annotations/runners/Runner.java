@@ -23,42 +23,39 @@ public class Runner {
 
     public static void main(String[] args) {
 	Department depart1 = new Department("Dark Angels");
-	
+
 	Employee empl1 = createEmployee1(depart1);
 	Employee empl2 = createEmployee2(depart1);
 	Employee empl3 = createEmployee3(depart1);
-	
+
 	setEmployeeToDepartment(depart1, empl1, empl2, empl3);
-	
+
 	Meeting meet1 = new Meeting("SPRING HERE");
 	Meeting meet2 = new Meeting("HIBERNATE");
-	
+
 	meet1.getEmployees().add(empl1);
 	empl1.getMeetings().add(meet1);
 	meet1.getEmployees().add(empl2);
 	empl2.getMeetings().add(meet1);
-	
+
 	meet2.getEmployees().add(empl3);
 	empl3.getMeetings().add(meet2);
 
-	
-	
 	Session session = util.getSession();
 	Transaction transact = session.beginTransaction();
-	
+
 	session.saveOrUpdate(depart1);
-	
+
 	session.saveOrUpdate(empl1);
 	session.saveOrUpdate(empl2);
 	session.saveOrUpdate(empl3);
-//	session.flush();
+	// session.flush();
 	transact.commit();
 	session.clear();
-	
-	
+
 	empl3 = (Employee) session.get(Employee.class, 3l);
 	log.info("Employee with id = 3: " + empl3);
-	
+	util.getSession().close();
 
     }
 
