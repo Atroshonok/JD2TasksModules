@@ -9,8 +9,7 @@
 		<version>0.0.1</version>
 	</parent>
 	
-	<artifactId>SpringIntroduction</artifactId>
-	<name>SpringIntroduction</name>
+	<artifactId>spring-introduction</artifactId>
 	<url>http://maven.apache.org</url>
 	
 	<properties>

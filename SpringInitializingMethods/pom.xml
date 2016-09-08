@@ -9,8 +9,7 @@
 		<version>0.0.1</version>
 	</parent>
 	
-	<artifactId>SpringInitializingMethods</artifactId>
-	<name>SpringInitializingMethods</name>
+	<artifactId>spring-initializing-methods</artifactId>
 	<url>http://maven.apache.org</url>
 	
 	<properties>

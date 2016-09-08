@@ -88,10 +88,10 @@
 	</build>
 
 	<modules>
-		<module>BeansXMLMapping</module>
-		<module>BeansAnnotationsMapping</module>
-    	<module>SpringIntroduction</module>
-    	<module>SpringInitializingMethods</module>
+		<module>beans-xml-mapping</module>
+		<module>beans-annotations-mapping</module>
+    	<module>spring-introduction</module>
+    	<module>spring-initializing-methods</module>
     	<module>spring-namespaces</module>
     	<module>spring-collections</module>
     	<module>spring-constructor-null-init</module>
