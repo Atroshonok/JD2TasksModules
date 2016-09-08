@@ -23,7 +23,7 @@ public class Address {
 
     @Override
     public String toString() {
-	return "Address:\n countries=" + countriesList + ",\n streets=" + streetsSet + ",\n hauses=" + housesMap + ",\n Person="+ personProps + "\n";
+	return "Address:\n countries=" + countriesList + ",\n streets=" + streetsSet + ",\n houses=" + housesMap + ",\n Person="+ personProps + "\n";
     }
 
     public Collection<String> getCountriesList() {
@@ -42,7 +42,7 @@ public class Address {
         this.streetsSet = streetsSet;
     }
 
-    public Map<Integer, Integer> getHausesMap() {
+    public Map<Integer, Integer> getHousesMap() {
         return housesMap;
     }
 

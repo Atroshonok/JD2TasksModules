@@ -1,9 +1,9 @@
-package com.atr.jd2tasks.constructor;
+package com.atr.jd2tasks.spring.constructor;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.atr.jd2tasks.constructor.beans.Person;
+import com.atr.jd2tasks.spring.constructor.beans.Person;
 
 public class MainLoader {
     public static void main(String[] args) {

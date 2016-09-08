@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="person" class="com.atr.jd2tasks.spring.expressions.beans.Person">
+		<property name="name" value="#{'Ivan'}" />
+		<property name="age" value="#{address.personProps.getProperty('age')}" />
+		<property name="index" value="#{T(java.lang.Math).PI*2.0+50-3/100}" />
+		<property name="address" value="#{address}" />
+		<property name="isValidEmail" value="#{address.personProps.getProperty('email') matches '[a-zA-Z1-9]+@[a-z]+\.by'}" />
+		<property name="houses" value="#{address.housesMap.?[value lt 23]}" />
+	</bean>
+
+	<bean id="address" class="com.atr.jd2tasks.spring.expressions.beans.Address">
+		<property name="country" value="#{address.country?:'Belarus'}" />
+		<property name="isPersonOlderTwenty" value="#{person.age gt 20}" />
+		<property name="housesMap">
+			<map>
+				<entry key="1" value="16" />
+				<entry key="2" value="17" />
+				<entry key="3" value="18" />
+				<entry key="4" value="19" />
+				<entry key="5" value="20" />
+				<entry key="6" value="21" />
+				<entry key="7" value="22" />
+				<entry key="8" value="23" />
+				<entry key="9" value="24" />
+				<entry key="10" value="25" />
+			</map>
+		</property>
+		<property name="personProps">
+			<props>
+				<prop key="age">27</prop>
+				<prop key="name">Ivan</prop>
+				<prop key="surname">Atroshonok</prop>
+				<prop key="email">atroshonok@tut.by</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- <bean id="collectionBean" class="com.atr.jd2tasks.spring.expressions.beans.CollectionBean"> <property name="persons"> <list> <value></value> </list> </property> </bean> -->
+	<bean id="personBean" class="com.atr.jd2tasks.spring.expressions.beans.PersonBean">
+		<property name="name" value="#{persons[0].name}" />
+		<property name="age" value="#{persons[0].age}" />
+		<property name="address" value="#{addresses[0]}" />
+	</bean>
+	<bean id="expressionBean" class="com.atr.jd2tasks.spring.expressions.beans.ExpressionBean">
+		<property name="personNames" value="#{persons.![name]}"/>
+		<property name="persons" value="#{persons.?[name eq 'Alex']}"/>
+	</bean>
+	<util:list id="persons">
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Person" p:name="Ivan" p:age="29" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Person" p:name="Alex" p:age="30" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Person" p:name="Deny" p:age="50" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Person" p:name="Max" p:age="20" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Person" p:name="Robert" p:age="15" />
+	</util:list>
+	<util:list id="addresses">
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Address" p:country="Belarus" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Address" p:country="USA" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Address" p:country="Germany" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Address" p:country="Australian" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Address" p:country="Mexico" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Address" p:country="Canada" />
+		<bean class="com.atr.jd2tasks.spring.expressions.beans.Address" p:country="Russia" />
+	</util:list>
+</beans>

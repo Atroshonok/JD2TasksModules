@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="person" class="com.atr.jd2tasks.constructor.beans.Person">
+    <bean id="person" class="com.atr.jd2tasks.spring.constructor.beans.Person">
     	<constructor-arg index="0" value="Ivan"/>
     	<constructor-arg index="1" value="29"/>
     	<property name="work">

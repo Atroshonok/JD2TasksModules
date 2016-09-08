@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.atr.jd2tasks.constructor.beans;
+package com.atr.jd2tasks.spring.constructor.beans;
 
 /**
  * @author Ivan Atroshonok

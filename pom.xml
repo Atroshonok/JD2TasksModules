@@ -95,5 +95,6 @@
     	<module>spring-namespaces</module>
     	<module>spring-collections</module>
     	<module>spring-constructor-null-init</module>
+    	<module>spring-expressions-language</module>
 	</modules>
 </project>
