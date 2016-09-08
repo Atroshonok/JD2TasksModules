@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.atr.hibtasks.beans" auto-import="false" catalog="test_db">
+	<class name="Order" table="orders_in_cart" lazy="false">
+		<id name="id" type="long">
+			<generator class="increment"/>
+		</id>
+		<many-to-one name="cart" class="Cart" column="F_CART_ID"/>
+		<property name="sumPrice" type="double"/>
+		<property name="state" type="string"/>
+	</class>
+</hibernate-mapping>

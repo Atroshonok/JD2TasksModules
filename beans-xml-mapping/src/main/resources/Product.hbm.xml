@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.atr.hibtasks.beans"	auto-import="false" catalog="task1_db">
+	<class name="Product" table="products">
+		<id name="id" column="ID" type="int" access="property">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string" access="property"/>
+		<property name="price" type="double" access="field" not-null="true"/>
+		<component name="category" class="ProductCategory">
+			<property name="name" column="F_category" type="string"/>
+		</component>
+		<property name="count" type="int" access="field"/>
+		<property name="description" type="text" />
+	</class>
+</hibernate-mapping>

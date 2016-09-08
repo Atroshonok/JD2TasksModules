@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.atr.hibtasks.beans" auto-import="false"  catalog="task1_db">
+	<class name="ClientDetail" table="T_CLIENTDETAIL" lazy="false">
+		<id name="id" type="long" column="F_ID">
+			<generator class="increment">
+				<param name="property">client</param>			
+			</generator>
+		</id>
+		<one-to-one name="client" class="Client" constrained="true"/>
+    	<property name="firstname" type="string"/>
+    	<property name="lastname" type="string"/>
+    	<property name="age" type="int"/>
+	</class>	
+</hibernate-mapping>
