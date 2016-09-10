@@ -96,5 +96,8 @@
     	<module>spring-collections</module>
     	<module>spring-constructor-null-init</module>
     	<module>spring-expressions-language</module>
-	</modules>
+    	<module>spring-autowiring-byname</module>
+    	<module>spring-autowiring-bytype</module>
+    <module>spring-autowiring-annotations</module>
+  </modules>
 </project>
