@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<bean id="person" class="com.atr.jd2tasks.spring.autowiring.bytype.Person" autowire="byType">
+		<property name="name" value="Ivan" />
+		<property name="age" value="29" />
+
+	</bean>
+	<bean id="personByConstructor" class="com.atr.jd2tasks.spring.autowiring.byconstructor.PersonByConstructor" autowire="constructor">
+		<property name="name" value="Alex" />
+		<property name="age" value="29" />
+
+	</bean>
+
+	<bean id="address" class="com.atr.jd2tasks.spring.autowiring.bytype.Address" autowire-candidate="false">
+		<property name="country" value="Belarus" />
+		<property name="city" value="Minsk" />
+		<property name="street" value="Gaya" />
+	</bean>
+	<bean id="addressImpl" class="com.atr.jd2tasks.spring.autowiring.bytype.AddressImpl" primary="true">
+		<property name="country" value="Belarus" />
+		<property name="city" value="Minsk" />
+		<property name="street" value="Lenina" />
+	</bean>
+</beans>
