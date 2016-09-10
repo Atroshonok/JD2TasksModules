@@ -6,14 +6,11 @@
 	<bean id="person" class="com.atr.jd2tasks.spring.autowiring.bytype.Person" autowire="byType">
 		<property name="name" value="Ivan" />
 		<property name="age" value="29" />
-
 	</bean>
 	<bean id="personByConstructor" class="com.atr.jd2tasks.spring.autowiring.byconstructor.PersonByConstructor" autowire="constructor">
 		<property name="name" value="Alex" />
 		<property name="age" value="29" />
-
 	</bean>
-
 	<bean id="address" class="com.atr.jd2tasks.spring.autowiring.bytype.Address" autowire-candidate="false">
 		<property name="country" value="Belarus" />
 		<property name="city" value="Minsk" />

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.atr.jd2tasks.spring.autowiring.scancomponent">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />
+		<context:exclude-filter type="assignable" expression="com.atr.jd2tasks.spring.autowiring.scancomponent.CompanyAddress" />
+	</context:component-scan>
+
+	<bean id="person" class="com.atr.jd2tasks.spring.autowiring.annotation.Person">
+		<property name="name" value="Ivan" />
+		<property name="age" value="29" />
+	</bean>
+	<bean id="address" class="com.atr.jd2tasks.spring.autowiring.annotation.Address" primary="true">
+		<property name="country" value="Belarus" />
+		<property name="city" value="Minsk" />
+		<property name="street" value="Gaya" />
+	</bean>
+
+	<bean id="requiredPerson" class="com.atr.jd2tasks.spring.autowiring.required.Person">
+		<property name="name" value="Alex" />
+		<property name="age" value="30" />
+	</bean>
+	<bean id="requiredFalsePerson" class="com.atr.jd2tasks.spring.autowiring.required.RequiredFalsePerson">
+		<property name="name" value="Migel" />
+		<property name="age" value="25" />
+	</bean>
+
+
+	<!-- Qualifier -->
+	<bean id="qualifierPerson" class="com.atr.jd2tasks.spring.autowiring.qualifiers.Person">
+		<property name="name" value="Will" />
+		<property name="age" value="40" />
+	</bean>
+	<bean id="homeAddress" class="com.atr.jd2tasks.spring.autowiring.qualifiers.HomeAddress">
+		<property name="country" value="Belarus" />
+		<property name="city" value="Moscow" />
+		<property name="street" value="Lenina" />
+	</bean>
+	<bean class="com.atr.jd2tasks.spring.autowiring.annotation.Address">
+		<property name="country" value="Belarus" />
+		<property name="city" value="Zaslavl" />
+		<property name="street" value="Microrayon-2 street" />
+		<qualifier value="anotherAddress" />
+	</bean>
+	<bean id="workAddress" class="com.atr.jd2tasks.spring.autowiring.qualifiers.WorkAddress">
+		<property name="country" value="USA" />
+		<property name="city" value="New-York" />
+		<property name="street" value="Fashion street" />
+	</bean>
+
+	<!-- Inject -->
+	<bean id="injectPerson" class=" com.atr.jd2tasks.spring.autowiring.inject.Person">
+		<property name="name" value="Seb" />
+		<property name="age" value="40" />
+	</bean>
+	<bean id="companyAddress" class="com.atr.jd2tasks.spring.autowiring.inject.CompanyAddress" scope="prototype">
+		<property name="country" value="Canada" />
+		<property name="city" value="Montreale" />
+		<property name="street" value="Work street" />
+	</bean>
+	<bean class="com.atr.jd2tasks.spring.autowiring.inject.HomeAddress" scope="prototype">
+		<property name="country" value="India" />
+		<property name="city" value="Deyli" />
+		<property name="street" value="Budda street" />
+	</bean>
+
+	<!-- Value -->
+	<bean id="valuePerson" class=" com.atr.jd2tasks.spring.autowiring.value.Person">
+		<property name="name" value="Michael" />
+		<property name="age" value="40" />
+	</bean>
+
+
+</beans>
