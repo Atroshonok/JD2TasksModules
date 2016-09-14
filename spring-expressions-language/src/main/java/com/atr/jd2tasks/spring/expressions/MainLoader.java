@@ -12,6 +12,8 @@ public class MainLoader {
 	AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 	Person person = (Person) context.getBean("person");
 	System.out.println(person);
+	System.out.println("!!!! DIGIT1: " + person.getDigit1());
+	System.out.println("!!!! DIGIT2: " + person.getDigit2());
 	PersonBean personBean = (PersonBean) context.getBean("personBean");
 	System.out.println("PersonBean: " + personBean);
 	ExpressionBean exprBean = (ExpressionBean) context.getBean("expressionBean");

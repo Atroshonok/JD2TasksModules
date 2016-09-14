@@ -18,11 +18,11 @@ public class MainLoader {
     public static void main(String[] args) {
 	AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 	Person person = (Person) context.getBean("person");
-	System.out.println("Person Name: " + person.getName());
-	System.out.println("Bean Name: " + person.getBeanName());
-	System.out.println(person.getAddress());
+	System.out.println(person);
+	System.out.println("Person: " + person);
+	System.out.println("Bean Name (id): " + person.getBeanName());
 	Address address = (Address) context.getBean("address");
-	System.out.println("ADDRESS ClassLoader : " + address.getClassLoader());
+	System.out.println("Address ClassLoader : " + address.getClassLoader());
 	context.close();
     }
 }

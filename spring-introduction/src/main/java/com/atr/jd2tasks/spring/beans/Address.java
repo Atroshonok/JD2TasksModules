@@ -9,7 +9,7 @@ import org.springframework.beans.factory.BeanClassLoaderAware;
  * @author Ivan Atroshonok
  *
  */
-public class Address implements BeanClassLoaderAware{
+public class Address implements BeanClassLoaderAware {
     private String country;
     private String street;
     private Integer home;
@@ -55,19 +55,14 @@ public class Address implements BeanClassLoaderAware{
 	this.home = home;
     }
 
-    
     public ClassLoader getClassLoader() {
-        return classLoader;
-    }
-
-    public void setClassLoader(ClassLoader classLoader) {
-        this.classLoader = classLoader;
+	return classLoader;
     }
 
     @Override
-    public void setBeanClassLoader(ClassLoader arg0) {
-	this.classLoader = arg0;
-	
+    public void setBeanClassLoader(ClassLoader classLoader) {
+	this.classLoader = classLoader;
+
     }
 
 }

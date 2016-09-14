@@ -4,6 +4,10 @@
 
 	<bean id="person" class="com.atr.jd2tasks.spring.expressions.beans.Person">
 		<property name="name" value="#{'Ivan'}" />
+		<property name="digit1" value="#{T(java.lang.Math).PI}" />
+		<property name="digit2" value="#{person.digit1*2}" /><!-- не проинициализируется -->
+		
+		
 		<property name="age" value="#{address.personProps.getProperty('age')}" />
 		<property name="index" value="#{T(java.lang.Math).PI*2.0+50-3/100}" />
 		<property name="address" value="#{address}" />
@@ -38,7 +42,6 @@
 		</property>
 	</bean>
 
-	<!-- <bean id="collectionBean" class="com.atr.jd2tasks.spring.expressions.beans.CollectionBean"> <property name="persons"> <list> <value></value> </list> </property> </bean> -->
 	<bean id="personBean" class="com.atr.jd2tasks.spring.expressions.beans.PersonBean">
 		<property name="name" value="#{persons[0].name}" />
 		<property name="age" value="#{persons[0].age}" />

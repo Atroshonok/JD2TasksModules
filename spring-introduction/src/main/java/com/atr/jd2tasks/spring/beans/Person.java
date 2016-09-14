@@ -16,10 +16,6 @@ public class Person implements BeanNameAware, InitializingBean {
     private Address address;
     private String beanName;
 
-    public String getBeanName() {
-        return this.beanName;
-    }
-
     public Person() {
 	super();
     }
@@ -28,6 +24,11 @@ public class Person implements BeanNameAware, InitializingBean {
 	super();
 	this.name = name;
 	this.age = age;
+    }
+
+    @Override
+    public String toString() {
+	return "Person [name=" + name + ", age=" + age + ", address=" + address + "]";
     }
 
     public String getName() {
@@ -50,19 +51,23 @@ public class Person implements BeanNameAware, InitializingBean {
 	return address;
     }
 
+    public String getBeanName() {
+	return this.beanName;
+    }
+
     public void setAddress(Address address) {
 	this.address = address;
     }
 
     @Override
-    public void setBeanName(String beanName) {
-	this.beanName = beanName;	
+    public void afterPropertiesSet() throws Exception {
+	this.name = "Roman";
+
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
-//	this.name = "Deny";
-	
+    public void setBeanName(String beanName) {
+	this.beanName = beanName;
     }
 
 }

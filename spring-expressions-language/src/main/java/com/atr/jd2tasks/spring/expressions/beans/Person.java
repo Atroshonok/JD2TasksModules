@@ -13,6 +13,8 @@ import java.util.Map;
 public class Person {
     private String name;
     private int age = 21;
+    private double digit1;
+    private double digit2;
     private double index;
     private String work = "Java developer";
     private Address address;
@@ -82,6 +84,22 @@ public class Person {
 
     public void setIndex(double index) {
 	this.index = index;
+    }
+
+    public double getDigit1() {
+	return digit1;
+    }
+
+    public void setDigit1(double digit1) {
+	this.digit1 = digit1;
+    }
+
+    public double getDigit2() {
+	return digit2;
+    }
+
+    public void setDigit2(double digit2) {
+	this.digit2 = digit2;
     }
 
 }
